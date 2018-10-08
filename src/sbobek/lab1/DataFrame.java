@@ -42,7 +42,7 @@ public class DataFrame {
             for (int j=0; j<names.length; ++j){
                 if (cols[i].equals(names[j])){
                     if (copy){
-                        System.arraycopy(data.get(i), 0, result.data.get(j), 0, size());
+                        result.data.get(j).addAll(data.get(i));
                     } else {
                         result.data.set(j, data.get(i));
                     }
@@ -61,7 +61,7 @@ public class DataFrame {
     DataFrame iloc (int from, int to){
         DataFrame result = new DataFrame(names, types);
         for (int j=0; j<names.length; ++j){
-            System.arraycopy(data.get(j), from, result.data.get(j), from, to-from);
+            result.data.get(j).addAll(data.get(j).subList(from, to));
         }
         return result;
     }
