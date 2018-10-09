@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class DataFrame {
 
-    ArrayList<ArrayList> data;
+    ArrayList<ArrayList> data = new ArrayList<ArrayList>();
     String[] names;
     String[] types;
 
