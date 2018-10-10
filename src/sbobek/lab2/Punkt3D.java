@@ -1,8 +1,9 @@
-package lab2;
+package sbobek.lab2;
+
 
 import java.lang.Math;
 
-public class Punkt3D extends Punkt2D{
+public class Punkt3D extends lab2.Punkt2D {
     protected double z;
     protected String name;
     public Punkt3D (double _x, double _y, double _z){
