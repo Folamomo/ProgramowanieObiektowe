@@ -1,5 +1,8 @@
 package sbobek.lab1;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class DataFrame {
@@ -8,13 +11,44 @@ public class DataFrame {
     String[] names;
     String[] types;
 
-    DataFrame(String[] nazwy, String[] typy){
+    public DataFrame(String[] nazwy, String[] typy){
         System.arraycopy(nazwy, 0, names, 0,nazwy.length);
         System.arraycopy(typy, 0, types, 0, typy.length);
         for (int i =0; i<nazwy.length; ++i){
             data.add(new ArrayList());
         }
     }
+
+    public DataFrame(String path, String[] typy){
+        System.arraycopy(typy, 0, types, 0, typy.length);
+        FileInputStream fstream = new FileInputStream(path);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+
+        String strLine;
+
+        strLine = br.readLine();
+        names = strLine.split(" ");
+
+        for (int i =0; i< names.length; ++i){
+            data.add(new ArrayList());
+        }
+
+        while ((strLine = br.readLine()) != null)   {
+
+        }
+
+//Close the input stream
+        br.close();
+    }
+    public DataFrame(String path, String[] typy, boolean header){
+        System.arraycopy(typy, 0, types, 0, typy.length);
+
+    }
+    public DataFrame(String path, String[] typy, boolean header, String[] headers){
+        System.arraycopy(typy, 0, types, 0, typy.length);
+
+    }
+
     int size(){
         return data.get(0).size();
     }
