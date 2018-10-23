@@ -38,8 +38,14 @@ public class subtitles {
             return;
         }
 
+
         while (sc.hasNextLine()) {
-            out.println(delay(sc.nextLine(), Integer.parseInt(argv[2]), Integer.parseInt(argv[3])));
+            try {
+                out.println(delay(sc.nextLine(), Integer.parseInt(argv[2]), Integer.parseInt(argv[3])));
+            }
+            catch (){
+
+            }
         }
 
     }
