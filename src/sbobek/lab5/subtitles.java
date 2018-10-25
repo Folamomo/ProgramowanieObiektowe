@@ -19,8 +19,8 @@ public class subtitles {
         Matcher m = goodSubtitleLine.matcher(in);
         StringBuilder result = new StringBuilder();
         m.find();
-        int newStart = Integer.parseInt(m.group(1))+(delay*1000)/framerate;
-        int newEnd = Integer.parseInt(m.group(2))+(delay*1000)/framerate;
+        int newStart = Integer.parseInt(m.group(1))+(delay*framerate)/1000;
+        int newEnd = Integer.parseInt(m.group(2))+(delay*framerate)/1000;
         result.append("{").append(newStart).append("}{").append(newEnd).append("}").append(m.group(3));
         return result.toString();
     }
