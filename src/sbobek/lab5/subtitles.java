@@ -61,8 +61,8 @@ public class subtitles {
             try {
                 OutputFile.println(subtitles.delay(sc.nextLine(), delay_ms, framerate));
             }
-            catch (Exception e){
-                e.printStackTrace();
+            catch (IllegalStateException e){
+                System.out.println("Bad format");
                 return;
             }
         }
