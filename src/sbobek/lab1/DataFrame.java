@@ -2,6 +2,7 @@ package sbobek.lab1;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -19,14 +20,20 @@ public class DataFrame {
         }
     }
 
-    public DataFrame(String path, String[] typy){
+    public DataFrame(String path, String[] typy) throws IOException {
         System.arraycopy(typy, 0, types, 0, typy.length);
-        FileInputStream fstream = new FileInputStream(path);
-        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+        BufferedReader br;
+        try (FileInputStream fstream = new FileInputStream(path)) {
+            br = new BufferedReader(new InputStreamReader(fstream));
+        }
 
-        String strLine;
+        String strLine = new String();
 
-        strLine = br.readLine();
+        try {
+            strLine = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         names = strLine.split(" ");
 
         for (int i =0; i< names.length; ++i){

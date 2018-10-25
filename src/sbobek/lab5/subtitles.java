@@ -11,9 +11,14 @@ public class subtitles {
 
 
     private static String delay (String in, int delay, int framerate){
+
+
+
+
         Pattern goodSubtitleLine = Pattern.compile("\\{(\\d+)\\}\\{(\\d+)\\}(.+)");
         Matcher m = goodSubtitleLine.matcher(in);
         StringBuilder result = new StringBuilder();
+        m.find();
         int newStart = Integer.parseInt(m.group(1))+(delay*1000)/framerate;
         int newEnd = Integer.parseInt(m.group(2))+(delay*1000)/framerate;
         result.append("{").append(newStart).append("}{").append(newEnd).append("}").append(m.group(3));
@@ -21,12 +26,25 @@ public class subtitles {
     }
 
     public static void main(String[] argv) {
-        File in = new File(argv[0]);
-        PrintWriter out = null;
+        String pathIn;
+        String pathOut;
+        int delay_ms;
+        int framerate;
         try {
-            out = new PrintWriter(argv[1]);
+            pathIn = argv [0];
+            pathOut = argv [1];
+            delay_ms = Integer.parseInt(argv[2]);
+            framerate = Integer.parseInt(argv[3]);
+        } catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Usage: in out delay framerate");
+            return;
+        }
+        File in = new File(pathIn);
+        PrintWriter OutputFile = null;
+        try {
+            OutputFile = new PrintWriter(pathOut);
         } catch (FileNotFoundException e) {
-            System.out.println("Invalid Path: " + argv[1]);
+            System.out.println("Invalid Path: " + pathOut);
             return;
         }
 
@@ -34,19 +52,24 @@ public class subtitles {
         try {
             sc = new Scanner(in);
         } catch (FileNotFoundException e) {
-            System.out.println("Invalid Path: " + argv[0]);
+            System.out.println("Invalid Path: " + pathIn);
             return;
         }
 
 
         while (sc.hasNextLine()) {
             try {
-                out.println(delay(sc.nextLine(), Integer.parseInt(argv[2]), Integer.parseInt(argv[3])));
+                OutputFile.println(subtitles.delay(sc.nextLine(), delay_ms, framerate));
             }
-            catch (){
-
+            catch (Exception e){
+                e.printStackTrace();
+                return;
             }
         }
+
+
+
+        OutputFile.close();
 
     }
 }
