@@ -6,23 +6,21 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import sbobek.lab5.SubtitleExceptions.InvalidFormat;
 
 public class subtitles {
 
 
-    private static String delay (String in, int delay, int framerate){
-
-
-
-
+    private static String delay (String in, int delay, int framerate) throws InvalidFormat{
         Pattern goodSubtitleLine = Pattern.compile("\\{(\\d+)\\}\\{(\\d+)\\}(.+)");
         Matcher m = goodSubtitleLine.matcher(in);
         StringBuilder result = new StringBuilder();
-        m.find();
-        int newStart = Integer.parseInt(m.group(1))+(delay*framerate)/1000;
-        int newEnd = Integer.parseInt(m.group(2))+(delay*framerate)/1000;
-        result.append("{").append(newStart).append("}{").append(newEnd).append("}").append(m.group(3));
-        return result.toString();
+        if(m.find()) {
+            int newStart = Integer.parseInt(m.group(1)) + (delay * framerate) / 1000;
+            int newEnd = Integer.parseInt(m.group(2)) + (delay * framerate) / 1000;
+            result.append("{").append(newStart).append("}{").append(newEnd).append("}").append(m.group(3));
+            return result.toString();
+        } else throw new InvalidFormat(in);
     }
 
     public static void main(String[] argv) {
@@ -36,15 +34,18 @@ public class subtitles {
             delay_ms = Integer.parseInt(argv[2]);
             framerate = Integer.parseInt(argv[3]);
         } catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("Usage: in out delay framerate");
+            System.err.println("Usage: in out delay framerate");
             return;
+        }
+        if (framerate<0){
+            System.err.println("Framerate can't be negative");
         }
         File in = new File(pathIn);
         PrintWriter OutputFile = null;
         try {
             OutputFile = new PrintWriter(pathOut);
         } catch (FileNotFoundException e) {
-            System.out.println("Invalid Path: " + pathOut);
+            System.err.println("Invalid Path: " + pathOut);
             return;
         }
 
@@ -52,7 +53,7 @@ public class subtitles {
         try {
             sc = new Scanner(in);
         } catch (FileNotFoundException e) {
-            System.out.println("Invalid Path: " + pathIn);
+            System.err.println("Invalid Path: " + pathIn);
             return;
         }
 
@@ -61,8 +62,8 @@ public class subtitles {
             try {
                 OutputFile.println(subtitles.delay(sc.nextLine(), delay_ms, framerate));
             }
-            catch (IllegalStateException e){
-                System.out.println("Bad format");
+            catch (InvalidFormat e){
+                System.err.println(e.getMessage());
                 return;
             }
         }

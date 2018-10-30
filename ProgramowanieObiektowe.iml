@@ -8,6 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ant:ant-javamail:1.6.5" level="project" />
-    <orderEntry type="library" name="io.indico:indico:3.1.0" level="project" />
+    <orderEntry type="library" name="io.indico:io.indico:3.16.0" level="project" />
   </component>
 </module>
