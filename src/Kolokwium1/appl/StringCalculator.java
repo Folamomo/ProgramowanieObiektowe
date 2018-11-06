@@ -9,7 +9,12 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class StringCalculator extends Calculator implements Cloneable{
+    public String getResult() {
+        return result;
+    }
+
     public static void main(String[] Args){
+
         StringCalculator calculator = new StringCalculator("Lorem");
         calculator.Add(" impsum dolor sit amet ");
         try {
@@ -30,6 +35,7 @@ public class StringCalculator extends Calculator implements Cloneable{
         } catch (BadInputException e) {
             e.printStackTrace();
         }
+
         calculator.SaveToFile("x", "1.txt");
         try {
             calculator.Subtract("Lorem impsum dolor sit amet");
