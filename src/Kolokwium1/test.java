@@ -23,4 +23,14 @@ public class test {
         }
         assertEquals("AAA", s.getResult());
     }
+
+    @Test
+    public void TestMultiplyThrows(){
+        StringCalculator s = new StringCalculator("A");
+        try {
+            s.Multiply(7);
+        } catch (TooBigNumberException e) {
+            assertEquals("5<x>", e.getMessage());
+        }
+    }
 }
