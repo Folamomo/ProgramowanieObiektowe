@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e812080-eb89-4138-b639-bde36e834c00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab_2/src/mails/EmailMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_2/src/zadania/ShapesProgram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/libraries/Gradle__com_google_guava_guava_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/libraries/Gradle__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/modules/lab6.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/modules/lab6_main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/modules/lab6_test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/classes/pl.edu.agh.kis.java2015.domain.HeapTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/classes/pl.edu.agh.kis.java2015.main.AppTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/packages/pl.edu.agh.kis.java2015.domain.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/reports/tests/test/packages/pl.edu.agh.kis.java2015.main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/test-results/test/TEST-pl.edu.agh.kis.java2015.domain.HeapTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/test-results/test/TEST-pl.edu.agh.kis.java2015.main.AppTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/src/main/java/pl/edu/agh/kis/java2015/domain/Heap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/src/main/java/pl/edu/agh/kis/java2015/main/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/src/test/java/pl/edu/agh/kis/java2015/domain/HeapTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stare/lab6/src/test/java/pl/edu/agh/kis/java2015/main/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -100,6 +61,16 @@
           <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="4" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -116,7 +87,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/java2015/domain/HeapTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
+            <state relative-caret-position="1641">
               <caret line="167" selection-start-line="167" selection-end-line="167" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -632,7 +603,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543179027116" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543184674245" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -717,8 +688,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543178010676</updated>
-      <workItem from="1543178014127" duration="943000" />
+      <workItem from="1543178014127" duration="1685000" />
     </task>
+    <task id="LOCAL-00001" summary="Lab4">
+      <created>1543179071684</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543179071684</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -731,9 +710,12 @@
     <history-entry file="HeapTest_insert0intoNewHeap_topIs0 - 2018.11.25 at 21h 47m 49s.xml">
       <configuration name="HeapTest.insert0intoNewHeap_topIs0" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HeapTest - 2018.11.25 at 21h 49m 17s.xml">
+      <configuration name="HeapTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="943000" />
+    <option name="totallyTimeSpent" value="1685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="62" width="2560" height="1384" extended-state="6" />
@@ -744,17 +726,17 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Learn" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.24980111" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24980111" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="2" visible="true" weight="0.3290735" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.3290735" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Build" order="5" weight="0.32988048" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.3298722" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -776,6 +758,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lab4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab4" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/java2015/main/App.java">
@@ -801,7 +787,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/java2015/domain/HeapTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
+        <state relative-caret-position="1641">
           <caret line="167" selection-start-line="167" selection-end-line="167" />
           <folding>
             <element signature="imports" expanded="true" />
