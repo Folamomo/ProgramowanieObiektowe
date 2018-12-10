@@ -3,9 +3,14 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+<<<<<<< HEAD:Lab_5/.idea/gradle.xml
         <option name="createEmptyContentRootDirectories" value="true" />
         <option name="distributionType" value="WRAPPED" />
+=======
+        <option name="distributionType" value="LOCAL" />
+>>>>>>> origin/master:lab6/.idea/gradle.xml
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/share/gradle/bin" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
