@@ -1,4 +1,4 @@
-package Histogram;
+package histogram;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

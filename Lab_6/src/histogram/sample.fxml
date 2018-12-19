@@ -3,21 +3,22 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="Histogram.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="histogram.Controller">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
-      <BarChart fx:id="histogram" GridPane.columnIndex="1">
+      <BarChart fx:id="Chart" GridPane.columnIndex="1">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -25,5 +26,6 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
+      <Button fx:id="button" mnemonicParsing="false" onAction="#doUpdate" text="AddMoreValues" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    </children>
 </GridPane>
