@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb82a1aa-fdb8-45c7-b159-3c8e908aaea3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/Lab_3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/crypto/Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/crypto/Cryptographer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/crypto/Polibiusz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/crypto/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/crypto/ROT11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/mails/EmailMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/shapes/Kolo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/shapes/Kwadrat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/shapes/Prostokat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/shapes/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/shapes/ShapesProgram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/workers/Kadry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/workers/Pracownik.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/workers/PracownikEtatowy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/src/workers/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_2/src/mails/EmailMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_7/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EchoClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="495">
               <caret line="33" column="50" selection-start-line="32" selection-start-column="9" selection-end-line="33" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Protocol/IDManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="180">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,8 +166,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,6 +224,7 @@
       <workItem from="1544909537442" duration="8169000" />
       <workItem from="1544978246870" duration="13634000" />
       <workItem from="1545173682166" duration="1620000" />
+      <workItem from="1545202604116" duration="637000" />
     </task>
     <task id="LOCAL-00001" summary="Protocol Client and Server">
       <created>1545018583010</created>
@@ -212,12 +237,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23423000" />
+    <option name="totallyTimeSpent" value="24060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="62" width="2560" height="1384" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26173428" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26412094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -434,8 +460,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EchoClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="495">
           <caret line="33" column="50" selection-start-line="32" selection-start-column="9" selection-end-line="33" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Protocol/ProtocolServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -451,18 +487,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Protocol/IDManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="180">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Protocol/ProtocolServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
