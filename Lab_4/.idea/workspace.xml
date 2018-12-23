@@ -2,46 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f85a7b2-9414-4273-9314-7bf14dab8e8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lab_4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subtitles/SubtitleExceptions/InvalidFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subtitles/Subtitles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subtitles/gravity.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subtitles/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/java2015/domain/Heap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/agh/kis/java2015/main/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/java2015/domain/HeapTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/edu/agh/kis/java2015/main/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/dictionaries/igor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/Ploter/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/Ploter/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/Ploter/Model.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/src/Ploter/sample.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/libraries/mysql_mysql_connector_java_8_0_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/Lab_6.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/sample/Book.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/sample/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/sample/DataBase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/sample/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_6/src/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab_4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab_4.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,25 +25,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/subtitles/out.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/subtitles/gravity.txt">
+        <entry file="file://$PROJECT_DIR$/src/subtitles/out.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2410">
-              <caret line="661" selection-start-line="661" selection-end-line="661" />
+            <state relative-caret-position="540">
+              <caret line="36" column="81" lean-forward="true" selection-start-line="36" selection-start-column="81" selection-end-line="36" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/subtitles/gravity.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9915">
+              <caret line="661" selection-start-line="661" selection-end-line="661" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/subtitles/SubtitleExceptions/InvalidFormat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="75">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -86,6 +56,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="newstart" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -108,6 +83,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,15 +114,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544485317500" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/subtitles" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544909504599" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab_11" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -192,46 +167,55 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544484740245</updated>
-      <workItem from="1544484744270" duration="564000" />
+      <workItem from="1544484744270" duration="1170000" />
+      <workItem from="1544908621644" duration="914000" />
     </task>
+    <task id="LOCAL-00001" summary="Moved Subtitles from old files">
+      <created>1544485308585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544485308585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564000" />
+    <option name="totallyTimeSpent" value="2084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="62" width="2560" height="1384" extended-state="6" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980111" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25179" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32960895" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,20 +226,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Moved Subtitles from old files" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/subtitles/SubtitleExceptions/InvalidFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/subtitles/gravity.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2410">
-          <caret line="661" selection-start-line="661" selection-end-line="661" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/subtitles/Subtitles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -263,8 +233,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/subtitles/gravity.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9915">
+          <caret line="661" selection-start-line="661" selection-end-line="661" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/subtitles/out.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="81" lean-forward="true" selection-start-line="36" selection-start-column="81" selection-end-line="36" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/subtitles/SubtitleExceptions/InvalidFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
