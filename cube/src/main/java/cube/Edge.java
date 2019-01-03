@@ -11,7 +11,8 @@ public class Edge extends Block {
          float size){
         super(materials.getMaterial(blockColor), size);
         sticker1 = new Sticker(materials.getMaterial(stickerColor1), size*0.9f);
-        sticker1.setLocalTranslation(0f,0f, size);
+        sticker1.setLocalTranslation(size,0f, 0f);
+        sticker1.setLocalRotation(new Quaternion(1f, 0f, 1f, 0f));
         attachChild(sticker1);
         sticker2 = new Sticker(materials.getMaterial(stickerColor2), size*0.9f);
         sticker2.setLocalRotation(new Quaternion(1f, 0f, 0f, 1f));

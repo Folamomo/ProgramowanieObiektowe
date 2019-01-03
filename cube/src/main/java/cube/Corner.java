@@ -15,7 +15,7 @@ public class Corner extends Block{
          float size){
         super(materials.getMaterial(blockColor), size);
 
-        sticker1 = new Sticker(materials.getMaterial(stickerColor1), size*0.9f);
+        sticker1 = new Sticker(materials.getMaterial(stickerColor3), size*0.9f);
         sticker1.setLocalTranslation(0f,0f, size);
         attachChild(sticker1);
 
@@ -24,7 +24,7 @@ public class Corner extends Block{
         sticker2.setLocalTranslation(0f, size, 0f);
         attachChild(sticker2);
 
-        sticker3 = new Sticker(materials.getMaterial(stickerColor3), size*0.9f);
+        sticker3 = new Sticker(materials.getMaterial(stickerColor1), size*0.9f);
         sticker3.setLocalRotation(new Quaternion(1f, 0f, 1f, 0f));
         sticker3.setLocalTranslation(size, 0f, 0f);
         attachChild(sticker3);
