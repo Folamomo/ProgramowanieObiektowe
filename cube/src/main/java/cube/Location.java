@@ -37,16 +37,21 @@ public class Location {
         Z = Math.round(v.z);
     }
 
-    void rotateLocal(Quaternion q){
-        Vector3f v = toVector3f();
+    void rotateLocal(Quaternion q, Vector3f center){
+        Vector3f v = toVector3f().subtract(center);
         v = q.mult(v);
+        v.addLocal(center);
         fromVector3f(v);
     }
 
-    Location rotate(Quaternion q){
+    Location rotate(Quaternion q, Vector3f center){
         Location l = new Location(this);
-        l.rotate(q);
+        l.rotate(q, center);
         return l;
+    }
+
+    void print(){
+        System.out.println("("+X+";"+Y+";"+Z+")");
     }
 
 }

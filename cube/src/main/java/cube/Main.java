@@ -64,7 +64,7 @@ public class Main extends SimpleApplication implements AnalogListener, ActionLis
         viewPort.setBackgroundColor(ColorRGBA.LightGray);
         Materials materials = new Materials(assetManager);
 
-        cube = new Cube(materials, 6);
+        cube = new Cube(materials, 3);
         rootNode.attachChild(cube);
 
         attachCoordinateAxes(rootNode.getLocalTranslation());
