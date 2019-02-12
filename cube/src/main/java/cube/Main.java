@@ -2,9 +2,11 @@ package cube;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.input.ChaseCamera;
+import com.jme3.input.KeyInput;
 import com.jme3.input.MouseInput;
 import com.jme3.input.controls.ActionListener;
 import com.jme3.input.controls.AnalogListener;
+import com.jme3.input.controls.KeyTrigger;
 import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
@@ -16,8 +18,10 @@ import com.jme3.scene.Mesh;
 import com.jme3.scene.debug.Arrow;
 import com.jme3.system.AppSettings;
 
+import static cube.Cube.X;
 
-public class Main extends SimpleApplication implements AnalogListener, ActionListener {
+
+public class Main extends SimpleApplication{
 
     private void attachCoordinateAxes(Vector3f pos) {
         Arrow arrow = new Arrow(Vector3f.UNIT_X.mult(10));
@@ -71,6 +75,8 @@ public class Main extends SimpleApplication implements AnalogListener, ActionLis
 
         setupCamera();
 
+        inputManager.addMapping("Rotate", new KeyTrigger(KeyInput.KEY_1));
+        inputManager.addListener(actionListener, new String[]{"Rotate"});
     }
 
     private void setupCamera(){
@@ -88,12 +94,14 @@ public class Main extends SimpleApplication implements AnalogListener, ActionLis
         cube.update(tpf);
     }
 
-    public void onAction(String name, boolean keyPressed, float tpf) {
 
-    }
 
-    @Override
-    public void onAnalog(String name, float value, float tpf) {
+    private ActionListener actionListener = new ActionListener() {
+        public void onAction(String name, boolean keyPressed, float tpf) {
+            if (name.equals("Rotate") && !keyPressed) { // test?
+                cube.doThing();  // action!
+            }
+        }
+    };
 
-    }
 }

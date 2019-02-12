@@ -7,6 +7,7 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class Cube extends Node {
 
@@ -25,14 +26,24 @@ public class Cube extends Node {
     static ColorRGBA CFront = ColorRGBA.Green;
     static ColorRGBA CBack = ColorRGBA.Blue;
 
+    class Move {
+        Location location;
+        Quaternion rotation;
+
+        public Move(Location location, Quaternion rotation) {
+            this.location = location;
+            this.rotation = rotation;
+        }
+    }
+
     int dimension;
-    float size = 0.5f;
+    float pieceSize = 0.5f;
 
     Materials materials;
-    ArrayList<AnimationQueueItem> animationQueue = new ArrayList<>();
-    AnimationQueueItem currentAnimation = null;
+    ArrayList<Move> moveQueue = new ArrayList<>();
+    PieceAnimation currentAnimation = null;
     Vector3f center;
-    ArrayList<Piece> pieces= new ArrayList<>();
+    ArrayList<Piece> pieces = new ArrayList<>();
 
 
     Cube(Materials m, int d) {
@@ -43,38 +54,69 @@ public class Cube extends Node {
 
         for (int i = 0; i < dimension; i++) { //faces
             for (int j = 0; j < dimension; j++) {
-                pieces.add(new Piece(new Location(0, i, j), CFront, this, new Vector3f(1f, 0f, 0f)));
-                pieces.add(new Piece(new Location(dimension - 1, i, j), CBack, this, new Vector3f(-1f, 0f, 0f)));
-                pieces.add(new Piece(new Location(i, 0, j), CTop, this, new Vector3f(0f, 1f, 0f)));
-                pieces.add(new Piece(new Location(i, dimension - 1, j), CBottom, this, new Vector3f(0f, -1f, 0f)));
-                pieces.add(new Piece(new Location(i, j, 0), CLeft, this, new Vector3f(0f, 0f, 1f)));
-                pieces.add(new Piece(new Location(i, j, dimension - 1), CRight, this, new Vector3f(0f, 0f, -1f)));
+                pieces.add(new Piece(this, new Location(0, i, j), new Vector3f(1f, 0f, 0f), CFront));
+                pieces.add(new Piece(this, new Location(dimension - 1, i, j), new Vector3f(-1f, 0f, 0f), CBack));
+                pieces.add(new Piece(this, new Location(i, 0, j), new Vector3f(0f, 1f, 0f), CTop));
+                pieces.add(new Piece(this, new Location(i, dimension - 1, j), new Vector3f(0f, -1f, 0f), CBottom));
+                pieces.add(new Piece(this, new Location(i, j, 0), new Vector3f(0f, 0f, 1f), CLeft));
+                pieces.add(new Piece(this, new Location(i, j, dimension - 1), new Vector3f(0f, 0f, -1f), CRight));
             }
         }
 
         for (Piece piece : pieces) {
             attachChild(piece);
         }
-        for (Piece piece : pieces) {
-            if (piece.location.Z == 1) {
-                piece.Rotate(Cube.Z);
+
+
+    }
+
+    ArrayList<Piece> getPiecesIf(Predicate<Piece> check){
+        ArrayList<Piece> result = new ArrayList<>(0);
+        for (Piece piece: pieces) {
+            if (check.test(piece)){
+                result.add(piece);
             }
         }
-        for (Piece piece : pieces) {
-            if (piece.location.Y == 0) {
-                piece.RotateWithAnimation(Cube.Y);
-            }
+        return result;
+    }
+
+    Predicate<Piece> samePlane(Location l, Quaternion rotation){
+        if(rotation.equals(X) || rotation.equals(X_)){
+            return (p2) -> l.X == p2.location.X;
+        }
+        if(rotation.equals(Y) || rotation.equals(Y_)){
+            return (p2) -> l.Y == p2.location.Y;
+        }
+        if(rotation.equals(Z) || rotation.equals(Z_)){
+            return (p2) -> l.Z == p2.location.Z;
+        }
+        return (p2) -> false;
+    }
+
+    void rotateFace(Move move){
+        /*This is like grabing piece and rotating it in rotation direction*/
+        ArrayList<Piece> toMove = getPiecesIf(samePlane(move.location, move.rotation));
+        for (Piece p : toMove) {
+            p.Rotate(move.rotation);
         }
     }
 
     void update(float tpf){
-       for (AnimationQueueItem a : animationQueue){
-           a.update(tpf);
-           if (a.isFinished){
-               a.end();
-           }
-       }
-       animationQueue.removeIf((AnimationQueueItem a)-> a.isFinished);
+        if (currentAnimation != null) {
+            if (currentAnimation.isFinished){
+                currentAnimation = null;
+            } else {
+                currentAnimation.update(tpf);
+            }
+        } else if (!moveQueue.isEmpty()){
+            currentAnimation = new PieceAnimation(this, moveQueue.get(0));
+            moveQueue.remove(0);
+            currentAnimation.update(tpf);
+        }
+    }
+
+    void doThing(){
+        moveQueue.add(new Move(new Location(2, 2, 2), Z));
     }
 
 }

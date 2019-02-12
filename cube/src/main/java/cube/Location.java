@@ -46,7 +46,7 @@ public class Location {
 
     Location rotate(Quaternion q, Vector3f center){
         Location l = new Location(this);
-        l.rotate(q, center);
+        l.rotateLocal(q, center);
         return l;
     }
 
