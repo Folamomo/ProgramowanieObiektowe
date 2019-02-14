@@ -16,6 +16,8 @@ import com.jme3.scene.Mesh;
 import com.jme3.scene.debug.Arrow;
 import com.jme3.system.AppSettings;
 
+import java.nio.charset.Charset;
+
 
 public class Main extends SimpleApplication implements AnalogListener, ActionListener {
 
@@ -96,4 +98,5 @@ public class Main extends SimpleApplication implements AnalogListener, ActionLis
     public void onAnalog(String name, float value, float tpf) {
 
     }
+
 }
