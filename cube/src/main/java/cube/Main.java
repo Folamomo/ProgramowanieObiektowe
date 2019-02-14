@@ -45,6 +45,7 @@ public class Main extends SimpleApplication{
     public void simpleInitApp() {
         viewPort.setBackgroundColor(ColorRGBA.LightGray);
         Materials materials = new Materials(assetManager);
+        setDisplayStatView(false);
 
         setupCamera();
 
@@ -52,7 +53,7 @@ public class Main extends SimpleApplication{
 
         inputManager.deleteMapping(SimpleApplication.INPUT_MAPPING_MEMORY);
 
-        cube = new Cube(materials, 3);
+        cube = new Cube(materials, 5);
         rootNode.attachChild(cube);
         controls = new Controls(cube, inputManager, cam, rootNode);
 
@@ -71,7 +72,6 @@ public class Main extends SimpleApplication{
     @Override
     public void simpleUpdate(float tpf) {
         cube.update(tpf);
-        controls.update(tpf);
     }
 
 }

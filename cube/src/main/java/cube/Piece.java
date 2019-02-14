@@ -16,12 +16,12 @@ public class Piece extends Node {
         this.cube = parent;
         color = stickerColor;
 
-        Geometry base = new Geometry("Box", new Box(cube.pieceSize, cube.pieceSize, cube.pieceSize));
+        Geometry base = new Geometry("pieceBase", new Box(cube.pieceSize, cube.pieceSize, cube.pieceSize));
         base.setMaterial(cube.materials.getMaterial(Cube.CBase));
         base.setLocalRotation(Quaternion.IDENTITY);
         attachChild(base);
 
-        Geometry sticker = new Geometry("Sticker", new Box(cube.pieceSize *0.9f, cube.pieceSize *0.9f, 0.01f));
+        Geometry sticker = new Geometry("pieceSticker", new Box(cube.pieceSize *0.9f, cube.pieceSize *0.9f, 0.01f));
         sticker.setMaterial(cube.materials.getMaterial(color));
         sticker.setLocalTranslation(cube.pieceSize,0f, 0f);
         sticker.setLocalRotation(new Quaternion().fromAngleAxis(FastMath.PI/2, new Vector3f(0f, 1f, 0f)));
@@ -54,11 +54,6 @@ public class Piece extends Node {
 
     void updateHighlight(){
         highlight(cube.highlighted.contains(location));
-//        boolean flag = false;
-//        for (Location location1 : cube.highlighted) {
-//            if (location.equals(location1)) flag = true;
-//        }
-//        highlight(flag);
     }
 
     void rotateWithAnimation(Quaternion rotation, float percentage){
@@ -73,9 +68,9 @@ public class Piece extends Node {
 
     void highlight(boolean flag){
         if (flag) {
-            getChild("Box").setMaterial(cube.materials.getMaterial(Cube.CHighlight));
+            getChild("pieceBase").setMaterial(cube.materials.getMaterial(Cube.CHighlight));
         } else {
-            getChild("Box").setMaterial(cube.materials.getMaterial(Cube.CBase));
+            getChild("pieceBase").setMaterial(cube.materials.getMaterial(Cube.CBase));
         }
         isHighlighted = flag;
     }

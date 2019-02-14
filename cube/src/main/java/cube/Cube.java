@@ -4,10 +4,13 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
+import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
+import com.jme3.scene.shape.Sphere;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.function.Predicate;
 
 public class Cube extends Node {
@@ -53,9 +56,9 @@ public class Cube extends Node {
 
     Cube(Materials m, int d) {
 
-        dimension = d;
-        materials = m;
-        center = new Vector3f((dimension - 1) / 2f, (dimension - 1) / 2f, (dimension - 1) / 2f);
+        this.dimension = d;
+        this.materials = m;
+        this.center = new Vector3f((dimension - 1) / 2f, (dimension - 1) / 2f, (dimension - 1) / 2f);
 
         for (int i = 0; i < dimension; i++) { //faces
             for (int j = 0; j < dimension; j++) {
@@ -71,7 +74,10 @@ public class Cube extends Node {
         for (Piece piece : pieces) {
             attachChild(piece);
         }
-
+        Geometry frontSphere = new Geometry("frontSphere", new Sphere(16, 16, 0.1f));
+        frontSphere.setMaterial(materials.getMaterial(ColorRGBA.Magenta));
+        frontSphere.setLocalTranslation(0, 0, pieceSize*dimension);
+        attachChild(frontSphere);
 
     }
 
@@ -116,6 +122,10 @@ public class Cube extends Node {
         }
     }
 
+    void rotateEntireCube(Quaternion r){
+        currentAnimation = new PieceAnimation(pieces, r);
+    }
+
     void setLocationHighlight(Location location, boolean flag) {
         for (Piece piece : pieces) {
             if (piece.location.equals(location)) piece.highlight(flag);
@@ -124,6 +134,36 @@ public class Cube extends Node {
             highlighted.add(location);
         } else {
             highlighted.remove(location);
+        }
+    }
+
+    void randomize(int moves){
+        Random random = new Random();
+        for (int i = 0; i < moves; i++) {
+
+            Location l = new Location(random.nextInt(dimension), random.nextInt(dimension), random.nextInt(dimension));
+            Quaternion d = Quaternion.IDENTITY;
+            switch (random.nextInt(6)) {
+                case 0:
+                    d = X;
+                    break;
+                case 1:
+                    d = X_;
+                    break;
+                case 2:
+                    d = Y;
+                    break;
+                case 3:
+                    d = Y_;
+                    break;
+                case 4:
+                    d = Z;
+                    break;
+                case 5:
+                    d = Z_;
+                    break;
+            }
+            rotateFaceWithAnimation(d, l);
         }
     }
 

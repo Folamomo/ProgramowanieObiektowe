@@ -58,6 +58,9 @@ public class Controls {
 
         manager.addMapping("LeftClick", new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
         manager.addListener(leftClickListener, "LeftClick");
+
+        manager.addMapping("R", new KeyTrigger(KeyInput.KEY_R));
+        manager.addListener(randomizelistener, "R");
     }
 
     InputListener turnkeyListener = new ActionListener() {
@@ -85,7 +88,11 @@ public class Controls {
                         direction = Cube.Z;
                         break;
                 }
-                cube.rotateHighlighted(direction);
+                if (cube.highlighted.isEmpty()){
+                    cube.rotateEntireCube(direction);
+                } else {
+                    cube.rotateHighlighted(direction);
+                }
             }
         }
     };
@@ -100,6 +107,7 @@ public class Controls {
 
     InputListener leftClickListener = new ActionListener() {
         Location old = new Location(-1, 0, 0);
+
         @Override
         public void onAction(String name, boolean isPressed, float tpf) {
             CollisionResults results = new CollisionResults();
@@ -109,7 +117,9 @@ public class Controls {
             // Aim the ray from the clicked spot forwards.
             Ray ray = new Ray(click3d, dir);
             rootNode.collideWith(ray, results);
-            if(results.size()>0) {
+            if (results.size() > 0&&
+                    (results.getClosestCollision().getGeometry().getName().equals("pieceBase")||
+                    results.getClosestCollision().getGeometry().getName().equals("pieceSticker"))) {
                 Piece selected = (Piece) results.getClosestCollision().getGeometry().getParent();
                 cube.setLocationHighlight(old, false);
                 cube.setLocationHighlight(selected.location, true);
@@ -120,10 +130,12 @@ public class Controls {
             }
         }
     };
-
-    void update(float tpf){
-
-    }
-
-
+    InputListener randomizelistener = new ActionListener() {
+        @Override
+        public void onAction(String name, boolean isPressed, float tpf) {
+            if (isPressed){
+                cube.randomize(20);
+            }
+        }
+    };
 }
