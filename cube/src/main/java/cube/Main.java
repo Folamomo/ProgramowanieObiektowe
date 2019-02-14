@@ -23,32 +23,10 @@ import static cube.Cube.X;
 
 public class Main extends SimpleApplication{
 
-    private void attachCoordinateAxes(Vector3f pos) {
-        Arrow arrow = new Arrow(Vector3f.UNIT_X.mult(10));
-        putShape(arrow, ColorRGBA.Red).setLocalTranslation(pos);
 
-        arrow = new Arrow(Vector3f.UNIT_Y.mult(10));
-        putShape(arrow, ColorRGBA.Green).setLocalTranslation(pos);
-
-        arrow = new Arrow(Vector3f.UNIT_Z.mult(10));
-        putShape(arrow, ColorRGBA.Blue).setLocalTranslation(pos);
-    }
-
-    private Geometry putShape(Mesh shape, ColorRGBA color) {
-        Geometry g = new Geometry("coordinate axis", shape);
-        Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        mat.getAdditionalRenderState().setWireframe(true);
-        mat.getAdditionalRenderState().setLineWidth(4);
-        mat.setColor("Color", color);
-        g.setMaterial(mat);
-        rootNode.attachChild(g);
-        return g;
-    }
-
-    boolean rotate = false;
     ChaseCamera chaseCam;
     Cube cube;
-
+    Controls controls;
     public static void main(String[] args) {
         Main main = new Main();
 
@@ -68,15 +46,16 @@ public class Main extends SimpleApplication{
         viewPort.setBackgroundColor(ColorRGBA.LightGray);
         Materials materials = new Materials(assetManager);
 
-        cube = new Cube(materials, 3);
-        rootNode.attachChild(cube);
-
-        attachCoordinateAxes(rootNode.getLocalTranslation());
-
         setupCamera();
 
         inputManager.addMapping("Rotate", new KeyTrigger(KeyInput.KEY_1));
-        inputManager.addListener(actionListener, new String[]{"Rotate"});
+
+        inputManager.deleteMapping(SimpleApplication.INPUT_MAPPING_MEMORY);
+
+        cube = new Cube(materials, 3);
+        rootNode.attachChild(cube);
+        controls = new Controls(cube, inputManager, cam, rootNode);
+
     }
 
     private void setupCamera(){
@@ -92,16 +71,7 @@ public class Main extends SimpleApplication{
     @Override
     public void simpleUpdate(float tpf) {
         cube.update(tpf);
+        controls.update(tpf);
     }
-
-
-
-    private ActionListener actionListener = new ActionListener() {
-        public void onAction(String name, boolean keyPressed, float tpf) {
-            if (name.equals("Rotate") && !keyPressed) { // test?
-                cube.doThing();  // action!
-            }
-        }
-    };
 
 }

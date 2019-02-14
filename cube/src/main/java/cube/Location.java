@@ -4,7 +4,9 @@ import com.jme3.math.FastMath;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 
-public class Location {
+import java.util.Objects;
+
+public class Location{
     int X;
     int Y;
     int Z;
@@ -54,4 +56,18 @@ public class Location {
         System.out.println("("+X+";"+Y+";"+Z+")");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return X == location.X &&
+                Y == location.Y &&
+                Z == location.Z;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(X, Y, Z);
+    }
 }

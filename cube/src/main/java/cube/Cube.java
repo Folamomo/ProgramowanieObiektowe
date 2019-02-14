@@ -7,18 +7,21 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.function.Predicate;
 
 public class Cube extends Node {
 
-    static Quaternion X = new Quaternion().fromAngleAxis(FastMath.PI/2, new Vector3f(1f, 0f, 0f));
-    static Quaternion X_ = new Quaternion().fromAngleAxis(-FastMath.PI/2, new Vector3f(1f, 0f, 0f));
-    static Quaternion Y = new Quaternion().fromAngleAxis(FastMath.PI/2, new Vector3f(0f, 1f, 0f));
-    static Quaternion Y_ = new Quaternion().fromAngleAxis(-FastMath.PI/2, new Vector3f(0f, 1f, 0f));
-    static Quaternion Z = new Quaternion().fromAngleAxis(FastMath.PI/2, new Vector3f(0f, 0f, 1f));
-    static Quaternion Z_ = new Quaternion().fromAngleAxis(-FastMath.PI/2, new Vector3f(0f, 0f, 1f));
+    static Quaternion X = new Quaternion().fromAngleAxis(FastMath.PI / 2, new Vector3f(1f, 0f, 0f));
+    static Quaternion X_ = new Quaternion().fromAngleAxis(-FastMath.PI / 2, new Vector3f(1f, 0f, 0f));
+    static Quaternion Y = new Quaternion().fromAngleAxis(FastMath.PI / 2, new Vector3f(0f, 1f, 0f));
+    static Quaternion Y_ = new Quaternion().fromAngleAxis(-FastMath.PI / 2, new Vector3f(0f, 1f, 0f));
+    static Quaternion Z = new Quaternion().fromAngleAxis(FastMath.PI / 2, new Vector3f(0f, 0f, 1f));
+    static Quaternion Z_ = new Quaternion().fromAngleAxis(-FastMath.PI / 2, new Vector3f(0f, 0f, 1f));
 
     static ColorRGBA CBase = ColorRGBA.Black;
+    static ColorRGBA CHighlight = ColorRGBA.Magenta;
+
     static ColorRGBA CTop = ColorRGBA.White;
     static ColorRGBA CBottom = ColorRGBA.Yellow;
     static ColorRGBA CLeft = ColorRGBA.Orange;
@@ -35,6 +38,8 @@ public class Cube extends Node {
             this.rotation = rotation;
         }
     }
+
+    HashSet<Location> highlighted = new HashSet<>();
 
     int dimension;
     float pieceSize = 0.5f;
@@ -70,30 +75,30 @@ public class Cube extends Node {
 
     }
 
-    ArrayList<Piece> getPiecesIf(Predicate<Piece> check){
+    ArrayList<Piece> getPiecesIf(Predicate<Piece> check) {
         ArrayList<Piece> result = new ArrayList<>(0);
-        for (Piece piece: pieces) {
-            if (check.test(piece)){
+        for (Piece piece : pieces) {
+            if (check.test(piece)) {
                 result.add(piece);
             }
         }
         return result;
     }
 
-    Predicate<Piece> samePlane(Location l, Quaternion rotation){
-        if(rotation.equals(X) || rotation.equals(X_)){
+    static Predicate<Piece> samePlane(Location l, Quaternion rotation) {
+        if (rotation.equals(X) || rotation.equals(X_)) {
             return (p2) -> l.X == p2.location.X;
         }
-        if(rotation.equals(Y) || rotation.equals(Y_)){
+        if (rotation.equals(Y) || rotation.equals(Y_)) {
             return (p2) -> l.Y == p2.location.Y;
         }
-        if(rotation.equals(Z) || rotation.equals(Z_)){
+        if (rotation.equals(Z) || rotation.equals(Z_)) {
             return (p2) -> l.Z == p2.location.Z;
         }
         return (p2) -> false;
     }
 
-    void rotateFace(Move move){
+    void rotateFace(Move move) {
         /*This is like grabing piece and rotating it in rotation direction*/
         ArrayList<Piece> toMove = getPiecesIf(samePlane(move.location, move.rotation));
         for (Piece p : toMove) {
@@ -101,22 +106,38 @@ public class Cube extends Node {
         }
     }
 
-    void update(float tpf){
+    void rotateFaceWithAnimation(Quaternion rotation, Location location) {
+        moveQueue.add(new Move(location, rotation));
+    }
+
+    void rotateHighlighted(Quaternion rotation) {
+        for (Location location : highlighted) {
+            rotateFaceWithAnimation(rotation, location);
+        }
+    }
+
+    void setLocationHighlight(Location location, boolean flag) {
+        for (Piece piece : pieces) {
+            if (piece.location.equals(location)) piece.highlight(flag);
+        }
+        if (flag) {
+            highlighted.add(location);
+        } else {
+            highlighted.remove(location);
+        }
+    }
+
+    void update(float tpf) {
         if (currentAnimation != null) {
-            if (currentAnimation.isFinished){
+            if (currentAnimation.isFinished) {
                 currentAnimation = null;
             } else {
                 currentAnimation.update(tpf);
             }
-        } else if (!moveQueue.isEmpty()){
+        } else if (!moveQueue.isEmpty()) {
             currentAnimation = new PieceAnimation(this, moveQueue.get(0));
             moveQueue.remove(0);
             currentAnimation.update(tpf);
         }
     }
-
-    void doThing(){
-        moveQueue.add(new Move(new Location(2, 2, 2), Z));
-    }
-
 }

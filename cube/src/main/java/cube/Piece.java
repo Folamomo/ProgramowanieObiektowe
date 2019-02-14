@@ -10,6 +10,7 @@ public class Piece extends Node {
     ColorRGBA color;
     Location location;
     Matrix3f orientation;
+    boolean isHighlighted;
 
     Piece(Cube parent, Location l, Vector3f orientation, ColorRGBA stickerColor){
         this.cube = parent;
@@ -18,7 +19,7 @@ public class Piece extends Node {
         Geometry base = new Geometry("Box", new Box(cube.pieceSize, cube.pieceSize, cube.pieceSize));
         base.setMaterial(cube.materials.getMaterial(Cube.CBase));
         base.setLocalRotation(Quaternion.IDENTITY);
-        //attachChild(base);
+        attachChild(base);
 
         Geometry sticker = new Geometry("Sticker", new Box(cube.pieceSize *0.9f, cube.pieceSize *0.9f, 0.01f));
         sticker.setMaterial(cube.materials.getMaterial(color));
@@ -42,21 +43,40 @@ public class Piece extends Node {
         orientation = rot;
     }
     public void setOrientation(Matrix3f m){
+        this.setLocalRotation(m);
         orientation = m;
     }
     void Rotate(Quaternion rotation){
-        this.setOrientation(orientation.mult(rotation.toRotationMatrix()));
+        this.setOrientation(rotation.toRotationMatrix().mult(orientation));
         this.setLocation(location.rotate(rotation, cube.center));
+        updateHighlight();
+    }
+
+    void updateHighlight(){
+        highlight(cube.highlighted.contains(location));
+//        boolean flag = false;
+//        for (Location location1 : cube.highlighted) {
+//            if (location.equals(location1)) flag = true;
+//        }
+//        highlight(flag);
     }
 
     void rotateWithAnimation(Quaternion rotation, float percentage){
         Quaternion q = new Quaternion().slerp(Quaternion.IDENTITY, rotation, percentage);
-        Matrix3f r =  orientation.mult(q.toRotationMatrix());
-
+        Matrix3f r =  q.toRotationMatrix().mult(orientation);
 
         Vector3f t = q.mult(location.toVector3f().subtract(cube.center));
 
         this.setLocalRotation(r);
         this.setLocalTranslation(t);
+    }
+
+    void highlight(boolean flag){
+        if (flag) {
+            getChild("Box").setMaterial(cube.materials.getMaterial(Cube.CHighlight));
+        } else {
+            getChild("Box").setMaterial(cube.materials.getMaterial(Cube.CBase));
+        }
+        isHighlighted = flag;
     }
 }

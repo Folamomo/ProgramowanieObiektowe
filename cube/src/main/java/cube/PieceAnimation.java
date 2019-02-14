@@ -8,8 +8,8 @@ public class PieceAnimation {
     ArrayList<Piece> pieces;
     Quaternion rotation;
     boolean isFinished;
-    float elapsedTime;
-    static float duration = 1f;
+    private float elapsedTime;
+    static float duration = 0.2f;
 
     void update(float tpf){
         elapsedTime+=tpf;
@@ -32,7 +32,7 @@ public class PieceAnimation {
     }
 
     PieceAnimation(Cube cube, Cube.Move move){
-        pieces = cube.getPiecesIf(cube.samePlane(move.location, move.rotation));
+        pieces = cube.getPiecesIf(Cube.samePlane(move.location, move.rotation));
         rotation = move.rotation;
     }
 }

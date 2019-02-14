@@ -46,6 +46,8 @@ dependencies {
     compile 'com.github.JavaSaBr:jmonkeybuilder-extension:2.1.1'
     compile 'com.github.JavaSaBr:tonegodemitter:2.4.1'
     compile 'jme3utilities:SkyControl:0.9.12'
+    compile "com.simsilica:lemur:1.11.0"
+    compile "com.simsilica:lemur-proto:1.10.0"
     runtime "${jme3.g}:jme3-desktop:${jme3.v}"
     runtime "${jme3.g}:jme3-jogg:${jme3.v}"
     runtime "${jme3.g}:jme3-lwjgl3:${jme3.v}"
