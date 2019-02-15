@@ -19,6 +19,7 @@ public class Materials {
         colors.add(ColorRGBA.Green);
         colors.add(ColorRGBA.Red);
         colors.add(ColorRGBA.Orange);
+        colors.add(ColorRGBA.Magenta);
         addAll(colors);
     }
     public Materials(AssetManager manager, List<ColorRGBA> colors){
